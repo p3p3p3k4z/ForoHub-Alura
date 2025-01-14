@@ -83,6 +83,11 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.3.0</version> <!-- Verifica la última versión disponible -->
+		</dependency>
 
 	</dependencies>
 
