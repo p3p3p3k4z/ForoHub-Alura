@@ -10,27 +10,19 @@ public class Topico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     private String titulo;
 
-    @Column(nullable = false)
     private String mensaje;
 
-    @Column(nullable = false)
-    private LocalDateTime fechaCreacion = LocalDateTime.now();
-
-    @Column(nullable = false)
-    private String estado = "ABIERTO";
-
     @ManyToOne
-    @JoinColumn(name = "autor_id", nullable = false)
     private Usuario autor;
 
     @ManyToOne
-    @JoinColumn(name = "curso_id", nullable = false)
     private Curso curso;
 
-    // Getters y Setters
+    private LocalDateTime fechaCreacion = LocalDateTime.now();
+
+    // Getters y setters
     public Long getId() {
         return id;
     }
@@ -55,22 +47,6 @@ public class Topico {
         this.mensaje = mensaje;
     }
 
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public Usuario getAutor() {
         return autor;
     }
@@ -85,5 +61,13 @@ public class Topico {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 }
